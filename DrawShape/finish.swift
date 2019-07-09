@@ -32,18 +32,10 @@ extension NSImage {
 func finish(image:NSImage) {
     //gets a path from user, I gess
     //I'm reusing code for this bit
-    print(" path to file save?")
-    let relitivPath = readLine()!
-    let isAbsilutPath = relitivPath.first == "/"
-    let absilutPath:String
-    if isAbsilutPath {
-        absilutPath = relitivPath
-    } else {
-        absilutPath = CommandLine.arguments[0] + "/" + relitivPath
-    }
-    
-    let url = URL(fileURLWithPath: absilutPath)
-    image.pngWrite(to: url)
+    print("path to file save?")
+    let path = readLine()!
+    let url = URL(fileURLWithPath: path)
+    print(image.pngWrite(to: url) ? "sucseded" : "failed" )
 }
 
 //I think this is the fastest to wright implemination but is it the wright way to do this?
