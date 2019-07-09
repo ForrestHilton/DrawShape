@@ -7,6 +7,15 @@
 //
 
 import Foundation
+import AppKit
 
-print("Hello, World!")
 
+//place holder for breaf testing
+let image = NSImage(size: NSSize(width: 200, height: 200) , flipped: false) { (rec) -> Bool in
+    
+    rec.fill()
+    
+    return true
+}
+
+finish(image:image)
